@@ -12,7 +12,7 @@ jobs:
       ${{matrix.gen}} ${{matrix.fuzz && 'Fuzz' || ''}}
       ${{matrix.shared && 'Shared' || ''}}
       ${{matrix.cxxflags_extra && 'Sanitize' || ''}}
-    runs-on: ${{ matrix.os || 'ubuntu-22.04' }}
+    runs-on: ${{ matrix.os || 'incredibuild-runner' }}
     strategy:
       matrix:
         cxx: [g++-4.9, g++-11, clang++-3.6, clang++-11]
