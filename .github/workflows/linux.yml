@@ -12,7 +12,7 @@ jobs:
       ${{matrix.gen}} ${{matrix.fuzz && 'Fuzz' || ''}}
       ${{matrix.shared && 'Shared' || ''}}
       ${{matrix.cxxflags_extra && 'Sanitize' || ''}}
-    runs-on: ${{ matrix.os || 'incredibuild-runner' }}
+    runs-on: ${{ matrix.os || 'ubuntu-22.04' }}
     strategy:
       matrix:
         cxx: [g++-4.9, g++-11, clang++-3.6, clang++-11]
@@ -35,12 +35,12 @@ jobs:
           - cxx: g++-13
             build_type: Release
             std: 23
-            os: ubuntu-24.04
+            os: incredibuild-runner
             shared: -DBUILD_SHARED_LIBS=ON
           - cxx: g++-14
             build_type: Release
             std: 23
-            os: ubuntu-24.04
+            os: incredibuild-runner
             gen: Ninja
           - cxx: clang++-3.6
           - cxx: clang++-11
