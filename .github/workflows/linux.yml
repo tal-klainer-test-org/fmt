@@ -35,12 +35,12 @@ jobs:
           - cxx: g++-13
             build_type: Release
             std: 23
-            os: ubuntu-24.04
+            os: incredibuild-runner
             shared: -DBUILD_SHARED_LIBS=ON
           - cxx: g++-14
             build_type: Release
             std: 23
-            os: ubuntu-24.04
+            os: incredibuild-runner
             gen: Ninja
           - cxx: clang++-3.6
           - cxx: clang++-11
